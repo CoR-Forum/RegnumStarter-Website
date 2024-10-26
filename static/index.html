@@ -6,6 +6,10 @@
     <meta name="description" content="Something unexpected is about to happen in the world of Regnum...">
     <meta name="keywords" content="Champions of Regnum, Regnum Online, MMORPG, Sylent-X, Sylent-X Regnum, Sylent-X Champions of Regnum, Sylent-X Regnum Online">
     <title>Sylent-X</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
     <style>
         body {
             background-color: #000;
@@ -101,7 +105,7 @@
             const name = document.getElementById('name').value;
             const discordTag = document.getElementById('discord_tag').value;
 
-            const url = `https://sylent-x.com/api/website.php?action=registerForBeta&email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&discord_tag=${encodeURIComponent(discordTag)}`;
+            const url = `/api/website.php?action=registerForBeta&email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&discord_tag=${encodeURIComponent(discordTag)}`;
 
             try {
                 const response = await fetch(url, {
