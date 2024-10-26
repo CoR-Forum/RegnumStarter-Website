@@ -101,7 +101,7 @@
             const name = document.getElementById('name').value;
             const discordTag = document.getElementById('discord_tag').value;
 
-            const url = `https://api.sylent-x.com/website.php?action=registerForBeta&email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&discord_tag=${encodeURIComponent(discordTag)}`;
+            const url = `https://sylent-x.com/api/website.php?action=registerForBeta&email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&discord_tag=${encodeURIComponent(discordTag)}`;
 
             try {
                 const response = await fetch(url, {
