@@ -66,6 +66,10 @@
             video.currentTime = 0;
             video.play();
         });
+    
+        video.addEventListener('error', (e) => {
+            console.error('Error loading video:', e);
+        });
     </script>
     <h1>Something unexpected is about to happen to the world of Champions of Regnum...</h1>
     <div id="timer"></div>
