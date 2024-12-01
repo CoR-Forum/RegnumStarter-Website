@@ -37,20 +37,6 @@
             margin-top: 20px;
             font-size: 2.5em;
         }
-        #beta-registration {
-            margin-top: 20px;
-            text-align: center;
-        }
-        #beta-registration input {
-            margin: 5px;
-            padding: 10px;
-            font-size: 1em;
-        }
-        #beta-registration button {
-            padding: 10px 20px;
-            font-size: 1em;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
@@ -75,15 +61,6 @@
     </script>
     <center style="padding-top:20px"><a href="/discord" target="_blank"><img width="200px" src="assets/join-discord-button.png" alt="Join Discord" /></a></center>
 
-    <!-- div id="beta-registration">
-        <h1>Register for Closed Beta</h1>
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="text" id="name" placeholder="Name (optional)">
-        <input type="text" id="discord_tag" placeholder="Discord Tag (optional)">
-        <button onclick="registerForBeta()">Register</button>
-        <div id="confirmation-message"></div>
-    </div -->
-
     <script>
         function updateTimer() {
             const endDate = new Date('December 24, 2024 18:00:00').getTime();
@@ -104,31 +81,6 @@
         }
 
         setInterval(updateTimer, 1000);
-
-        async function registerForBeta() {
-            const email = document.getElementById('email').value;
-            const name = document.getElementById('name').value;
-            const discordTag = document.getElementById('discord_tag').value;
-
-            const url = `/api/website.php?action=registerForBeta&email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&discord_tag=${encodeURIComponent(discordTag)}`;
-
-            try {
-                const response = await fetch(url, {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    document.getElementById('confirmation-message').innerText = 'Registration successful! Please check your email for confirmation.';
-                } else {
-                    document.getElementById('confirmation-message').innerText = 'Registration failed. Please try again later.';
-                }
-            } catch (error) {
-                document.getElementById('confirmation-message').innerText = 'An error occurred. Please try again later.';
-            }
-        }
     </script>
 </body>
 </html>
