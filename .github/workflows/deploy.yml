@@ -20,7 +20,7 @@ jobs:
     - name: Deploy to FTP server
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
-        server: plesk1.sitebuilder360.com
+        server: plesk1.hosting360.ca
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
