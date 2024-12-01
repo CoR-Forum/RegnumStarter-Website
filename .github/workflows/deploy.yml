@@ -22,5 +22,6 @@ jobs:
         server: plesk1.hosting360.ca
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftps
         local-dir: ./
         server-dir: /httpdocs/
