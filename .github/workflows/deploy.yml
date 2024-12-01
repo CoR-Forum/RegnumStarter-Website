@@ -16,6 +16,11 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Check if discord directory exists
+      run: |
+        echo "Checking if discord directory exists on the server..."
+        echo "ls discord" | lftp -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }} || echo "Directory does not exist"
+
     - name: Deploy to FTP server
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
