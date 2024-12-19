@@ -21,7 +21,7 @@
             align-items: center;
             margin: 0;
             overflow: hidden;
-            padding-top: 50px;
+            padding-top: 70px; /* Default padding */
             text-align: center;
         }
         nav {
@@ -37,6 +37,25 @@
         }
         nav img {
             height: 50px;
+        }
+        nav img:last-child {
+            height: 50px;
+        }
+        @media (min-width: 600px) {
+            nav img:last-child {
+                height: 75px;
+            }
+            body {
+                padding-top: 90px; /* Increased padding for larger screens */
+            }
+        }
+        @media (min-width: 900px) {
+            nav img:last-child {
+                height: 100px;
+            }
+            body {
+                padding-top: 120px; /* Further increased padding for even larger screens */
+            }
         }
         #content {
             width: 100%;
