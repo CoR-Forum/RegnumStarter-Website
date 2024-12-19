@@ -120,8 +120,6 @@
             <source src="assets/gource.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <div id="version" style="margin-top: 20px; font-size: 1.5em;">Current Version: 0.0.0</div>
-        <div id="release-date" style="margin-top: 10px; font-size: 1.2em;">Released Jan 01 1970</div>
     </div>
     <script>
         const video = document.querySelector('video');
@@ -166,21 +164,6 @@
 
         setInterval(showNextPreview, 1000);
         previews[currentPreviewIndex].style.display = 'flex'; // Show the first preview initially
-
-        // Fetch and display version and release date
-        async function fetchVersion() {
-            try {
-                const response = await fetch('https://patch.sylent-x.com/latest_version.txt');
-                const text = await response.text();
-                const [version, releaseDate] = text.split('\n');
-                document.getElementById('version').innerText = `Current Version: ${version}`;
-                document.getElementById('release-date').innerText = `Release Date: ${releaseDate}`;
-            } catch (error) {
-                console.error('Error fetching version:', error);
-            }
-        }
-
-        fetchVersion();
     </script>
 </body>
 </html>
