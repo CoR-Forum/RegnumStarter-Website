@@ -25,14 +25,6 @@
             overflow: auto; /* Changed from hidden to auto */
             padding-top: 50px; /* Added padding at the top */
         }
-        .pulsate {
-            animation: pulsate 1.5s infinite;
-        }
-        @keyframes pulsate {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
         #timer {
             margin-top: 20px;
             font-size: 2.5em;
@@ -74,7 +66,7 @@
 </head>
 <body>
     <img style="padding-bottom: 30px; padding-top: 200px" width="400px" src="assets/sylent-logo-wide.png" alt="Sylent-X">
-    <img style="padding-bottom: 30px" width="300px" src="assets/cor-logo-big.png" alt="Champions of Regnum" class="pulsate">
+    <img style="padding-bottom: 30px" width="300px" src="assets/cor-logo-big.png" alt="Champions of Regnum">
     <center style="padding-top:20px"><a href="/discord" target="_blank"><img width="240px" src="assets/join-discord-button.png" alt="Join Discord" /></a></center>
     <div id="timer"></div>
     <div id="previews-container" class="previews-container">
