@@ -119,6 +119,7 @@
         <img src="assets/cor-logo-big.png" alt="Champions of Regnum">
     </nav>
     <div id="content">
+        <canvas id="snowflakes"></canvas>
         <center class="center-content"><a href="/discord" target="_blank"><img width="200px" src="assets/join-discord-button.png" alt="Join Discord" /></a></center>
         <div id="timer"></div>
         <div id="previews-container" class="previews-container">
@@ -188,5 +189,7 @@
         setInterval(showNextPreview, 1000);
         previews[currentPreviewIndex].style.display = 'flex'; // Show the first preview initially
     </script>
+    <link rel="stylesheet" href="scripts/snow/snow.css">
+    <script src="scripts/snow/snow.js"></script>
 </body>
 </html>
