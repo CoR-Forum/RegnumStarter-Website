@@ -148,45 +148,47 @@
     </div>
     <script>
         const video = document.querySelector('video');
+        video.volume = 0.3; // Set default volume to 30%
+    
         video.addEventListener('ended', () => {
             video.currentTime = 0;
             video.play();
         });
-
+    
         video.addEventListener('error', (e) => {
             console.error('Error loading video:', e);
         });
-
+    
         function updateTimer() {
             const endDate = new Date('December 24, 2024 18:00:00').getTime();
             const now = new Date().getTime();
             const distance = endDate - now;
-
+    
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
+    
             document.getElementById('timer').innerHTML = "Download available in\n" +
                 days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
+    
             if (distance < 0) {
                 document.getElementById('timer').innerHTML = "EXPIRED";
             }
         }
-
+    
         setInterval(updateTimer, 1000);
-
+    
         // Slideshow functionality
         const previews = document.querySelectorAll('.preview');
         let currentPreviewIndex = 0;
-
+    
         function showNextPreview() {
             previews[currentPreviewIndex].style.display = 'none';
             currentPreviewIndex = (currentPreviewIndex + 1) % previews.length;
             previews[currentPreviewIndex].style.display = 'flex';
         }
-
+    
         setInterval(showNextPreview, 1000);
         previews[currentPreviewIndex].style.display = 'flex'; // Show the first preview initially
     </script>
