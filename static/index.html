@@ -121,7 +121,6 @@
     </nav>
     <div id="content">
         <canvas id="snowflakes"></canvas>
-        <center class="center-content"><a href="/discord" target="_blank"><img width="200px" src="assets/join-discord-button.png" alt="Join Discord" /></a></center>
         <div id="timer"></div>
         <div id="previews-container" class="previews-container">
             <div class="preview">
@@ -141,6 +140,7 @@
                 <img src="assets/ss/fov-zoom_thumb.png">
             </div>
         </div>
+        <center class="center-content"><a href="/discord" target="_blank"><img width="200px" src="assets/join-discord-button.png" alt="Join Discord" /></a></center>
         <video controls playsinline>
             <source src="assets/gource.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -167,7 +167,7 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById('timer').innerHTML = 
+            document.getElementById('timer').innerHTML = "Download available in\n" +
                 days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 
             if (distance < 0) {
