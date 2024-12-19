@@ -48,12 +48,27 @@
         .preview {
             display: none;
             gap: 10px;
+            position: relative;
         }
 
         .preview img {
             width: 600px; /* Adjust the width as needed */
             height: auto;
             border: 2px solid #0f0;
+        }
+
+        .preview .overlay-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
         }
     </style>
 </head>
@@ -64,16 +79,20 @@
     <div id="timer"></div>
     <div id="previews-container" class="previews-container">
         <div class="preview">
+            <div class="overlay-text">Standard</div>
             <img src="assets/ss/normal_thumb.png">
         </div>
         <div class="preview">
+            <div class="overlay-text">FOV</div>
             <img src="assets/ss/fov_thumb.png">
         </div>
         <div class="preview">
+            <div class="overlay-text">Zoom</div>
             <img src="assets/ss/zoom_thumb.png">
         </div>
         <div class="preview">
-            <img src="assets/ss/zoom-fov_thumb.png">
+            <div class="overlay-text">FOV and Zoom</div>
+            <img src="assets/ss/fov-zoom_thumb.png">
         </div>
     </div>
     <video width="896" controls>
