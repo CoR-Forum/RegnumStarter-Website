@@ -166,11 +166,11 @@
     
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const minutes = Math.floor((distance % (1000 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
             document.getElementById('timer').innerHTML = "Download available in\n" +
-                days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+                days + "d " + hours + "h " + minutes + "m " + seconds + "s " ;
     
             if (distance < 0) {
                 document.getElementById('timer').innerHTML = "EXPIRED";
@@ -189,7 +189,7 @@
             previews[currentPreviewIndex].style.display = 'flex';
         }
     
-        setInterval(showNextPreview, 1000);
+        setInterval(showNextPreview, 1500);
         previews[currentPreviewIndex].style.display = 'flex'; // Show the first preview initially
     </script>
     <link rel="stylesheet" href="scripts/snow/snow.css">
