@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    let previousWidth = window.innerWidth;
+    let previousHeight = window.innerHeight;
+    canvas.width = previousWidth;
+    canvas.height = previousHeight;
 
     const snowflakes = [];
 
@@ -18,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
                 opacity: Math.random(),
-                speedX: Math.random() * 1.5 - 0.75, // Reduced speedX
-                speedY: Math.random() * 1.5 + 0.5,  // Reduced speedY
+                speedX: Math.random() * 1.5 - 0.75,
+                speedY: Math.random() * 1.5 + 0.5,
                 radius: Math.random() * 4 + 1
             });
         }
@@ -65,7 +67,21 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSnowfall();
 
     window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        const newWidth = window.innerWidth;
+        const newHeight = window.innerHeight;
+
+        const widthRatio = newWidth / previousWidth;
+        const heightRatio = newHeight / previousHeight;
+
+        for (const snowflake of snowflakes) {
+            snowflake.x *= widthRatio;
+            snowflake.y *= heightRatio;
+        }
+
+        previousWidth = newWidth;
+        previousHeight = newHeight;
+
+        canvas.width = newWidth;
+        canvas.height = newHeight;
     });
 });
