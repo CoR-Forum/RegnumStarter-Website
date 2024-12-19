@@ -19,11 +19,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            width: 100vw;
             margin: 0;
-            overflow: auto;
+            overflow: hidden;
             padding-top: 50px;
+            text-align: center;
         }
         nav {
             width: 100%;
@@ -34,9 +33,16 @@
             position: fixed;
             top: 0;
             background-color: #000;
+            box-sizing: border-box;
         }
         nav img {
             height: 50px;
+        }
+        #content {
+            width: 100%;
+            max-width: 600px;
+            padding: 0 20px;
+            box-sizing: border-box;
         }
         #timer {
             margin-top: 20px;
@@ -55,7 +61,7 @@
             position: relative;
         }
         .preview img {
-            width: 600px;
+            width: 100%;
             height: auto;
             border: 2px solid #0f0;
         }
@@ -72,6 +78,16 @@
             align-items: center;
             font-size: 1.5em;
         }
+        video {
+            width: 100%;
+            height: auto;
+        }
+        @media (max-width: 600px) {
+            video {
+                width: 100%;
+                height: auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -79,37 +95,39 @@
         <img src="assets/sylent-logo-wide.png" alt="Sylent-X">
         <img src="assets/cor-logo-big.png" alt="Champions of Regnum">
     </nav>
-    <center style="padding-top:20px"><a href="/discord" target="_blank"><img width="240px" src="assets/join-discord-button.png" alt="Join Discord" /></a></center>
-    <div id="timer"></div>
-    <div id="previews-container" class="previews-container">
-        <div class="preview">
-            <div class="overlay-text">Standard</div>
-            <img src="assets/ss/normal_thumb.png">
+    <div id="content">
+        <center style="padding-top:20px"><a href="/discord" target="_blank"><img width="240px" src="assets/join-discord-button.png" alt="Join Discord" /></a></center>
+        <div id="timer"></div>
+        <div id="previews-container" class="previews-container">
+            <div class="preview">
+                <div class="overlay-text">Standard</div>
+                <img src="assets/ss/normal_thumb.png">
+            </div>
+            <div class="preview">
+                <div class="overlay-text">FOV</div>
+                <img src="assets/ss/fov_thumb.png">
+            </div>
+            <div class="preview">
+                <div class="overlay-text">Zoom</div>
+                <img src="assets/ss/zoom_thumb.png">
+            </div>
+            <div class="preview">
+                <div class="overlay-text">FOV and Zoom</div>
+                <img src="assets/ss/fov-zoom_thumb.png">
+            </div>
         </div>
-        <div class="preview">
-            <div class="overlay-text">FOV</div>
-            <img src="assets/ss/fov_thumb.png">
-        </div>
-        <div class="preview">
-            <div class="overlay-text">Zoom</div>
-            <img src="assets/ss/zoom_thumb.png">
-        </div>
-        <div class="preview">
-            <div class="overlay-text">FOV and Zoom</div>
-            <img src="assets/ss/fov-zoom_thumb.png">
-        </div>
+        <video controls style="padding-top: 20px;">
+            <source src="assets/gource.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
-    <video width="896" controls style="padding-top: 20px;">
-        <source src="assets/gource.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
     <script>
         const video = document.querySelector('video');
         video.addEventListener('ended', () => {
             video.currentTime = 0;
             video.play();
         });
-    
+
         video.addEventListener('error', (e) => {
             console.error('Error loading video:', e);
         });
