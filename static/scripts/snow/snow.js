@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
                 opacity: Math.random(),
-                speedX: Math.random() * 3 - 1.5,
-                speedY: Math.random() * 3 + 1,
+                speedX: Math.random() * 1.5 - 0.75, // Reduced speedX
+                speedY: Math.random() * 1.5 + 0.5,  // Reduced speedY
                 radius: Math.random() * 4 + 1
             });
         }
