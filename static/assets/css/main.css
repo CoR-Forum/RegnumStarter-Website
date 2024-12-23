@@ -23,6 +23,29 @@ nav {
     box-sizing: border-box;
     z-index: 1; /* Update z-index to be above the snowflakes */
 }
+
+nav button {
+    background-color: #0f0;
+    color: #000;
+    border: 2px solid #0f0;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    margin: 0 5px;
+}
+
+nav button:hover {
+    background-color: #000;
+    color: #0f0;
+    transform: scale(1.1);
+}
+
+nav button:focus {
+    outline: none;
+    box-shadow: 0 0 10px #0f0;
+}
+
 nav img {
     height: 50px;
 }

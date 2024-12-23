@@ -24,45 +24,51 @@
 <body>
     <nav>
         <img src="assets/sylent-logo-wide.png" alt="Sylent-X">
+        <div>
+            <button id="home-link">Home</button>
+            <button id="changelog-link">Changelog</button>
+        </div>
         <a href="/discord" target="_blank"><img style="height:60px" src="assets/join-discord-button.png" alt="Join Discord" /></a>
     </nav>
     <div id="content">
-        <div id="previews-container" class="previews-container">
-            <div class="preview">
-                <div class="overlay-text">Standard</div>
-                <img src="assets/ss/normal_thumb.png">
+        <div id="home-content">
+            <div id="previews-container" class="previews-container">
+                <div class="preview">
+                    <div class="overlay-text">Standard</div>
+                    <img src="assets/ss/normal_thumb.png">
+                </div>
+                <div class="preview">
+                    <div class="overlay-text">FOV</div>
+                    <img src="assets/ss/fov_thumb.png">
+                </div>
+                <div class="preview">
+                    <div class="overlay-text">Zoom</div>
+                    <img src="assets/ss/zoom_thumb.png">
+                </div>
+                <div class="preview">
+                    <div class="overlay-text">FOV and Zoom</div>
+                    <img src="assets/ss/fov-zoom_thumb.png">
+                </div>
             </div>
-            <div class="preview">
-                <div class="overlay-text">FOV</div>
-                <img src="assets/ss/fov_thumb.png">
-            </div>
-            <div class="preview">
-                <div class="overlay-text">Zoom</div>
-                <img src="assets/ss/zoom_thumb.png">
-            </div>
-            <div class="preview">
-                <div class="overlay-text">FOV and Zoom</div>
-                <img src="assets/ss/fov-zoom_thumb.png">
-            </div>
+            <center class="center-content">
+                <a href="//patch.sylent-x.com/Sylent-X.exe" download>
+                    <button class="download-button">Download Now</button>
+                </a>
+            </center>
+            <video controls playsinline>
+                <source src="assets/gource.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
-        <center class="center-content">
-            <a href="//patch.sylent-x.com/Sylent-X.exe" download>
-                <button class="download-button">Download Now</button>
-            </a>
-        </center>
-        <video controls playsinline>
-            <source src="assets/gource.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div id="changelog-content">
+        <div id="changelog-content" style="display: none;">
             <h2>Changelog</h2>
-            <div class="changelog-entry">
+            <!-- div class="changelog-entry">
                 <h3>Version 1.0.1 - Bug fixes and performance improvements</h3>
                 <p>Details about the bug fixes and performance improvements.</p>
-            </div>
+            </div -->
             <div class="changelog-entry">
                 <h3>Version 1.0.0 - Initial release</h3>
-                <p>Details about the initial release.</p>
+                <p>Sylent-X initial release.</p>
             </div>
         </div>
     </div>
