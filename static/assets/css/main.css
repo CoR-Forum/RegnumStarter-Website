@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
-    overflow: hidden;
+    /* overflow: hidden; */ /* Remove this line */
     padding-top: 70px; /* Default padding */
     text-align: center;
 }
@@ -114,4 +114,17 @@ video {
 .download-button:hover {
     background-color: #000;
     color: #0f0;
+}
+
+/* Remove the collapsible styles */
+.collapsible {
+    display: none;
+}
+
+.content {
+    display: block;
+    padding: 0 18px;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    color: #000;
 }
