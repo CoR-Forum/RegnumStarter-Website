@@ -21,7 +21,7 @@ nav {
     top: 0;
     background-color: #000;
     box-sizing: border-box;
-    z-index: -100;
+    z-index: 1; /* Update z-index to be above the snowflakes */
 }
 nav img {
     height: 50px;
