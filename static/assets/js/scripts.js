@@ -41,6 +41,11 @@ document.getElementById('download-link').addEventListener('click', () => {
     document.getElementById('download-content').style.display = 'block';
 });
 
+document.getElementById('menu-toggle').addEventListener('click', () => {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('active');
+});
+
 // Remove the collapsible functionality
 // const collapsibles = document.querySelectorAll('.collapsible');
 // collapsibles.forEach((collapsible) => {
