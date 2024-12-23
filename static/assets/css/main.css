@@ -99,3 +99,19 @@ video {
 .center-content {
     padding-top: 20px;
 }
+
+.download-button {
+    background-color: #0f0;
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 20px;
+}
+
+.download-button:hover {
+    background-color: #000;
+    color: #0f0;
+}
