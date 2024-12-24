@@ -41,6 +41,14 @@ document.getElementById('download-link').addEventListener('click', () => {
     document.getElementById('download-content').style.display = 'block';
 });
 
+document.getElementById('news-link').addEventListener('click', () => {
+    document.getElementById('home-content').style.display = 'none';
+    document.getElementById('changelog-content').style.display = 'none';
+    document.getElementById('download-content').style.display = 'none';
+    document.getElementById('news-home').style.display = 'none'; // Hide news on homepage
+    document.getElementById('news-content').style.display = 'block';
+});
+
 document.getElementById('menu-toggle').addEventListener('click', () => {
     const menu = document.getElementById('menu');
     menu.classList.toggle('active');
