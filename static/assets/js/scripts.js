@@ -41,17 +41,29 @@ document.getElementById('download-link').addEventListener('click', () => {
     document.getElementById('download-content').style.display = 'block';
 });
 
-document.getElementById('news-link').addEventListener('click', () => {
-    document.getElementById('home-content').style.display = 'none';
-    document.getElementById('changelog-content').style.display = 'none';
-    document.getElementById('download-content').style.display = 'none';
-    document.getElementById('news-home').style.display = 'none'; // Hide news on homepage
-    document.getElementById('news-content').style.display = 'block';
-});
-
 document.getElementById('menu-toggle').addEventListener('click', () => {
     const menu = document.getElementById('menu');
     menu.classList.toggle('active');
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('assets/changelog.json')
+        .then(response => response.json())
+        .then(data => {
+            const changelogContainer = document.getElementById('changelog-entries');
+            const homeChangelogContainer = document.getElementById('home-changelog-entries');
+            data.forEach(entry => {
+                const entryDiv = document.createElement('div');
+                entryDiv.classList.add('changelog-entry');
+                entryDiv.innerHTML = `
+                    <h3>Version ${entry.version} - ${entry.date}</h3>
+                    ${entry.changes.map(change => `<p>${change}</p>`).join('')}
+                `;
+                changelogContainer.appendChild(entryDiv);
+                homeChangelogContainer.appendChild(entryDiv.cloneNode(true));
+            });
+        })
+        .catch(error => console.error('Error fetching changelog:', error));
 });
 
 // Remove the collapsible functionality
