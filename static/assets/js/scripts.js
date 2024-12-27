@@ -47,6 +47,20 @@ document.getElementById('menu-toggle').addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+    async function fetchConnectedUsers() {
+        try {
+            const response = await fetch('https://api.sylent-x.com/v1');
+            const data = await response.json();
+            const connectedUsers = data.activity.connectedUsers;
+            document.getElementById('connected-users').innerText = `Connected Users: ${connectedUsers}`;
+        } catch (error) {
+            console.error('Error fetching connected users:', error);
+        }
+    }
+
+    // Call the function to fetch and display connected users
+    fetchConnectedUsers();
+
     fetch('assets/changelog.json')
         .then(response => response.json())
         .then(data => {

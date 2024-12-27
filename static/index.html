@@ -74,6 +74,12 @@
                     <img src="assets/ss/moonwalk-preview-slowed-50.gif">
                 </div>
             </div>
+            <div id="connected-users-content">
+                <center class="center-content">
+                    <h2>Activity</h2>
+                    <div id="connected-users"></div>
+                </center>
+            </div>
             <h2>Changelog</h2>
             <div id="home-changelog-entries"></div>
         </div>
@@ -96,31 +102,10 @@
                 </a>
             </center>
         </div>
-        <div id="connected-users-content">
-            <center class="center-content">
-                <h1>Activity</h1>
-                <div id="connected-users"></div>
-            </center>
-        </div>
     </div>
     <script src="assets/js/scripts.js"></script>
     <link rel="stylesheet" href="assets/css/snow.css">
     <script src="assets/js/snow.js"></script>
     <canvas id="snowflakes"></canvas>
-    <script>
-        async function fetchConnectedUsers() {
-            try {
-                const response = await fetch('https://api.sylent-x.com/v1');
-                const data = await response.json();
-                const connectedUsers = data.activity.connectedUsers;
-                document.getElementById('connected-users').innerText = `Connected Users: ${connectedUsers}`;
-            } catch (error) {
-                console.error('Error fetching connected users:', error);
-            }
-        }
-
-        // Call the function to fetch and display connected users
-        fetchConnectedUsers();
-    </script>
 </body>
 </html>
