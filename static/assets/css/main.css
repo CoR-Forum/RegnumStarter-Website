@@ -14,7 +14,7 @@ body {
 nav {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center the nav bar */
     align-items: center;
     padding: 10px 20px;
     position: fixed;
@@ -88,6 +88,11 @@ nav button:focus {
     body {
         padding-top: calc(70px + 20vw); /* Further increased flexible padding for mobile */
     }
+}
+nav div {
+    display: flex;
+    justify-content: center; /* Center the menu items */
+    width: 100%;
 }
 #content {
     width: 100%;
