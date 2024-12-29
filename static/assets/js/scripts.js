@@ -46,20 +46,6 @@ document.getElementById('menu-toggle').addEventListener('click', () => {
     menu.classList.toggle('active');
 });
 
-async function fetchConnectedUsers() {
-    try {
-        const response = await fetch('https://api.regnumstarter.cor-forum.de/v1');
-        const data = await response.json();
-        const connectedUsers = data.activity.connectedUsers;
-        document.getElementById('connected-users').innerText = `Connected Users: ${connectedUsers}`;
-    } catch (error) {
-        console.error('Error fetching connected users:', error);
-    }
-}
-
-// Call the function to fetch and display connected users
-fetchConnectedUsers();
-
 document.addEventListener('DOMContentLoaded', function() {
     fetch('assets/changelog.json')
         .then(response => response.json())
