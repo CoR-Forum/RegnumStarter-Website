@@ -48,7 +48,7 @@ document.getElementById('menu-toggle').addEventListener('click', () => {
 
 async function fetchConnectedUsers() {
     try {
-        const response = await fetch('https://api.sylent-x.com/v1');
+        const response = await fetch('https://api.regnumstarter.cor-forum.de/v1');
         const data = await response.json();
         const connectedUsers = data.activity.connectedUsers;
         document.getElementById('connected-users').innerText = `Connected Users: ${connectedUsers}`;
