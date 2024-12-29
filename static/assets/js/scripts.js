@@ -62,6 +62,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 changelogContainer.appendChild(entryDiv);
                 homeChangelogContainer.appendChild(entryDiv.cloneNode(true));
             });
+            // Ensure changelog is displayed even if it contains only one entry
+            if (data.length === 1) {
+                changelogContainer.style.display = 'block';
+                homeChangelogContainer.style.display = 'block';
+            }
         })
         .catch(error => console.error('Error fetching changelog:', error));
 });
